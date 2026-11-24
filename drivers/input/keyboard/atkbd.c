@@ -1768,6 +1768,13 @@ static int __init atkbd_deactivate_fixup(const struct dmi_system_id *id)
 static const struct dmi_system_id atkbd_dmi_quirk_table[] __initconst = {
 	{
 		.matches = {
+			DMI_MATCH(DMI_SYS_VENDOR, "XIAOMI"),
+			DMI_MATCH(DMI_PRODUCT_NAME, "REDMI Book Pro 14 2026"),
+		},
+		.callback = atkbd_deactivate_fixup,
+	},
+	{
+		.matches = {
 			DMI_MATCH(DMI_SYS_VENDOR, "Dell Inc."),
 			DMI_MATCH(DMI_CHASSIS_TYPE, "8"), /* Portable */
 		},
